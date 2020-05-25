@@ -1,0 +1,61 @@
+<div>
+  <br />
+  <div class="d-flex justify-content-center">
+    <h1>Listagem de repositíros do GitHub por linguagem</h1>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <div class="row">
+        <div class="col-md-9">
+          <select  class="d-inline-block" style="width: 100%;height: 28px;" [(ngModel)]="language">
+            <option  disabled value="">Escolha uma linguagem</option>
+            <option  value="Java">Java</option>
+            <option  value="Clojure">Clojure</option>
+            <option  value="Python">Python</option>
+            <option  value="C++">C++</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <button class="btn-primary" style="width: 100%;" (click)="searchAndCreateLanguage()">Pesquisar</button>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-md-12">
+          <table class="table table-striped" style="width: 100%;">
+            <thead>
+              <tr>
+                <th>
+                  ID
+                </th>
+                <th>
+                  Nome
+                </th>
+                <th>
+                  Linguagem
+                </th>
+              </tr>
+            </thead>
+            <tbody >
+              <tr *ngFor="let item of data.items">
+                <td>
+                    {{item.id}}
+                </td>
+                <td>
+                    {{item.name}}
+                </td>
+                <td>
+                    {{item.language}}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4"></div>
+
+  </div>
+</div>
